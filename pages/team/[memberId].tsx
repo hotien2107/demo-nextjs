@@ -15,7 +15,7 @@ const Tien = () => {
       </Head>
       <button
         onClick={() => {
-          router.push("/");
+          router.push("./");
         }}
       >
         Home
