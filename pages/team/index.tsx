@@ -3,6 +3,19 @@ import Image from "next/image";
 import Link from "next/link";
 import freedom from "../../public/images/images.jpeg";
 
+const keyStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
+
+const triplet = (e1: any, e2: any, e3: any) =>
+  keyStr.charAt(e1 >> 2) +
+  keyStr.charAt(((e1 & 3) << 4) | (e2 >> 4)) +
+  keyStr.charAt(((e2 & 15) << 2) | (e3 >> 6)) +
+  keyStr.charAt(e3 & 63);
+
+const rgbDataURL = (r: any, g: any, b: any) =>
+  `data:image/gif;base64,R0lGODlhAQABAPAA${
+    triplet(0, r, g) + triplet(b, 255, 255)
+  }/yH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==`;
+
 const Team = () => {
   return (
     <>
@@ -26,12 +39,14 @@ const Team = () => {
       <span>image in internet, size: 500 x 300</span>
       <Image
         src='https://st.depositphotos.com/1428083/2946/i/600/depositphotos_29460297-stock-photo-bird-cage.jpg'
+        blurDataURL={rgbDataURL(2, 129, 210)}
+        placeholder='blur'
         alt='Picture of the author'
         width={500}
         height={300}
       />
       <span>image in assets, size: 500 x 300</span>
-      <Image src={freedom} alt='Picture of the author' width={500} height={300} />
+      <Image placeholder='blur' src={freedom} alt='Picture of the author' width={500} height={300} />
     </>
   );
 };
