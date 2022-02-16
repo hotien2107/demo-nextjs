@@ -2,7 +2,7 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import { memberList } from "../../dummy_data";
 
-const Tien = () => {
+const Team = () => {
   const router = useRouter();
   const { memberId } = router.query;
 
@@ -11,18 +11,18 @@ const Tien = () => {
   return (
     <>
       <Head>
-        <title>Tien</title>
+        <title>Member</title>
       </Head>
       <button
         onClick={() => {
           router.push("./");
         }}
       >
-        Home
+        Return
       </button>
       <h1>{member?.name}</h1>
     </>
   );
 };
 
-export default Tien;
+export default Team;
