@@ -39,14 +39,14 @@ const Team = () => {
       <span>image in internet, size: 500 x 300</span>
       <Image
         src='https://st.depositphotos.com/1428083/2946/i/600/depositphotos_29460297-stock-photo-bird-cage.jpg'
-        blurDataURL={rgbDataURL(2, 129, 210)}
+        blurDataURL={rgbDataURL(210, 119, 21)}
         placeholder='blur'
         alt='Picture of the author'
         width={500}
         height={300}
       />
       <span>image in assets, size: 500 x 300</span>
-      <Image src={freedom} alt='Picture of the author' width={500} height={300} />
+      <Image placeholder='blur' src={freedom} alt='Picture of the author' width={500} height={300} />
     </>
   );
 };
