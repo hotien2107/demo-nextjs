@@ -45,6 +45,7 @@ const Team = () => {
         width={500}
         height={300}
       />
+      <br />
       <span>image in assets, size: 500 x 300</span>
       <Image placeholder='blur' src={freedom} alt='Picture of the author' width={500} height={300} />
     </>
